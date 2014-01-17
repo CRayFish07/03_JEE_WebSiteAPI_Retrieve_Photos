@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">	
+
+<struts>
+	<!--struts2 develop mode -->
+	<constant name="struts.devMode" value="true"/>
+	
+	<package name="default3" namespace="/flickrImage" extends="json-default">
+		<action name="searchPhotosAction" class="com.joe.web.action.SearchPhotosAction" method="execute">
+			<result name="SearchFlickr" type="json"></result>
+		</action>
+	</package>
+	
+	<!-- struts-default -->
+	<package name="default" namespace="/flickrImageSave" extends="json-default">
+		<action name="savePhotosAction" class="com.joe.web.action.SearchPhotosAction" method="savePhotos">
+			<result name="Save" type="json"></result>
+		</action>
+		<action name="savePhotosInMultiThreadAction" class="com.joe.web.action.SearchPhotosAction" method="savePhotosInMultiThread">
+			<result name="Save" type="json"></result>
+		</action>
+		
+	</package>
+</struts>
